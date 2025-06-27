@@ -1,5 +1,6 @@
-import { DataGrid, type GridRowsProp, type GridColDef } from "@mui/x-data-grid";
-import { CustomThemeProvider, ThemeLanguage } from "./CustomThemeProvider";
+import { DataGrid, GridRowsProp, GridColDef } from "@mui/x-data-grid";
+import { CustomThemeProvider } from "./CustomThemeProvider";
+import {ThemeLanguage, Themes, } from "./theme"
 
 const rows: GridRowsProp = [
   { id: 1, col1: "Hello", col2: "World" },
@@ -19,7 +20,7 @@ const columns: GridColDef[] = [
 export default function App() {
   return (
     <div style={{ height: 300, width: "100%" }}>
-      <CustomThemeProvider language={ThemeLanguage.EN}>
+      <CustomThemeProvider language={ThemeLanguage.EN} theme={Themes.BRAND_LIGHT}>
         <DataGrid rows={rows} columns={columns} />
       </CustomThemeProvider>
     </div>
